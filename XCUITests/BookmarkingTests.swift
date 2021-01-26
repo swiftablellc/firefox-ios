@@ -254,6 +254,16 @@ class BookmarkingTests: BaseTestCase {
         checkBookmarked()
     }
 
+    func testUndoDeleteBookmark() {
+        navigator.openURL(path(forTestPage: url_1))
+        navigator.nowAt(BrowserTab)
+        waitForTabsButton()
+        bookmark()
+        checkBookmarked()
+        undoBookmarkRemoval()
+        checkBookmarked()
+    }
+
     private func addNewBookmark() {
         navigator.goto(MobileBookmarksAdd)
         navigator.performAction(Action.AddNewBookmark)

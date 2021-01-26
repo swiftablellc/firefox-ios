@@ -45,6 +45,14 @@ class NewTabUserResearch {
             defaults.bool(forKey: enrollmentKey)
         }
     }
+    var hasEnrolled: Bool {
+        set(value) {
+            defaults.set(value, forKey: enrollmentKey)
+        }
+        get {
+            defaults.bool(forKey: enrollmentKey)
+        }
+    }
     
     // MARK: Initializer
     init(lpVariable: LPVar? = LPVariables.newTabButtonABTest) {
